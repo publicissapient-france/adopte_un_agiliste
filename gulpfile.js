@@ -6,8 +6,8 @@ var imagemin = require('gulp-imagemin');
 var usemin = require('gulp-usemin');
 var minifyCss = require('gulp-minify-css');
 var rev = require('gulp-rev');
+var clean = require('gulp-clean');
 
-var del = require('del');
 
 var paths = {
     scripts: 'scripts/**/*',
@@ -20,22 +20,23 @@ var paths = {
 };
 
 gulp.task('clean', function (cb) {
-    del(paths.dist + '/**/*', cb);
+    return gulp.src(paths.dist, {read: false})
+        .pipe(clean());
 });
 
-var distTasks = ['clean', 'image', 'usemin'];
+var distTasks = ['clean','image', 'usemin'];
 gulp.task('deploy', distTasks, function () {
-    gulp.src(paths.dist)
+    return gulp.src(paths.dist + '/**/*')
         .pipe(deploy());
 });
 
 gulp.task('image', function () {
-    gulp.src(paths.images).pipe(imagemin()).pipe(gulp.dest(paths.dist + '/images'));
+    return gulp.src(paths.images).pipe(imagemin()).pipe(gulp.dest(paths.dist + '/images'));
 });
 
 
 gulp.task('usemin', function () {
-    gulp.src(paths.html).pipe(usemin({
+    return gulp.src(paths.html).pipe(usemin({
         css: [less(), 'concat', minifyCss(), rev()]
     })).pipe(gulp.dest(paths.dist));
 });
