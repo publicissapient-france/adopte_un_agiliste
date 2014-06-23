@@ -2,11 +2,14 @@
   "name": "adopte_un_agiliste",
   "version": "1.0.0",
   "devDependencies": {
+    "del": "^0.1.0",
     "gulp": "^3.8.1",
     "gulp-gh-pages": "^0.3.2",
     "gulp-imagemin": "^0.6.1",
     "gulp-less": "^1.2.3",
+    "gulp-minify-css": "^0.3.5",
     "gulp-minify-html": "^0.1.3",
+    "gulp-rev": "^0.4.1",
     "gulp-uglify": "^0.3.1",
     "gulp-usemin": "^0.3.5"
   }
