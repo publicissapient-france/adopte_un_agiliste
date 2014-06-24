@@ -14,6 +14,12 @@
   -o-transition: @transition;
 }
 
+.box-shadow (@string) {
+  -webkit-box-shadow: @string;
+  -moz-box-shadow:    @string;
+  box-shadow:         @string;
+}
+
 //Fonts
 
 @font-face {
@@ -103,13 +109,24 @@ header {
 main {
 
   .selected-agiliste {
+    background-color: white;
+    .box-shadow(8px 0px 15px #aaa);
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+
+    @heightPhoto: 270px;
     .agiliste-photo {
       background-color: black;
-      min-height: 270px;
+      min-height: @heightPhoto;
+
+      .agiliste-big {
+        height: @heightPhoto;
+      }
     }
 
     .centering {
       max-width: @maxWidthInner;
+      text-align: left;
     }
 
   }
@@ -256,7 +273,10 @@ main {
       padding-right: @paddingLeftRight;
       text-align: justify;
     }
+
+    border-bottom: 1px solid #E1E1E1;
   }
+
 }
 
 footer {
@@ -266,7 +286,7 @@ footer {
     @heightSocial: 100px;
     height: @heightSocial;
     line-height: @heightSocial;
-    background-color: white;
+    background-color: @backgroundMediumColor;
 
     a {
       display: inline-block;
@@ -280,7 +300,7 @@ footer {
       height: @height;
       line-height: @height;
       margin: 0 20px;
-      font-size:24px;
+      font-size: 24px;
 
       @media (max-width: 450px) {
         margin: 0;
