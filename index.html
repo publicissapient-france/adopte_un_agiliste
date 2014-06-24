@@ -29,13 +29,15 @@
     <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
 
+
+    <!-- build:hbar js/templates.js -->
+    <script src="templates/agiliste-miniature.handlebars"></script>
+    <!-- endbuild -->
+
     <!-- build:js js/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
 
-    <!-- build:hbar js/templates.js -->
-    <script src="templates/agilise-miniature.handlebars"></script>
-    <!-- endbuild -->
 
 </head>
 <body>
@@ -79,40 +81,8 @@
         <h1>Nos coachs du mois</h1>
 
         <div class="content">
-            <div class="coach-list">
+            <div class="coach-list" id="coach-list">
 
-                <div class="agiliste">
-                    <a href="" class="agiliste-miniature">
-                        <img src="images/agiliste/benjamin_moitie_mini.png" alt="Benjamin Moitie"
-                                />
-                        <div class="mask">
-                            <div class="adopt-me-marker"></div>
-                        </div>
-
-                    </a>
-
-                    <div class="title">Backlog Spécialiste</div>
-                    <div class="description">Le barbu</div>
-                </div>
-                <div class="agiliste">
-                    <a href="" class="agiliste-miniature">
-                        <img src="images/agiliste/laurene_vol_mini.png" alt="Laurene Vol" class="agiliste-miniature"/>
-                        <div class="mask"></div>
-                    </a>
-
-                    <div class="title">Kanban experte</div>
-                    <div class="description">La pro du post-it</div>
-                </div>
-                <div class="agiliste">
-                    <a href="" class="agiliste-miniature">
-                        <img src="images/agiliste/clement_rochas_mini.png" alt="Clement Rochas"
-                             class="agiliste-miniature"/>
-                        <div class="mask"></div>
-                    </a>
-
-                    <div class="title">Le DevOps</div>
-                    <div class="description">Les valeurs d'abord !</div>
-                </div>
 
             </div>
 
