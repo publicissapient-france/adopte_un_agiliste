@@ -22,5 +22,5 @@ Les desc dans coach du mois en violet : si c'est violet, c'est que c'est clickab
 
 
 23 : 2h
-24 : 2H
+24 : 3H
 

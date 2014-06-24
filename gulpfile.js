@@ -14,6 +14,7 @@ var declare = require('gulp-declare');
 
 var paths = {
     scripts: 'scripts/**/*',
+    font: 'font/**/*',
     stylesheets: 'stylesheets/**/*.less',
     templates: 'templates/**/*',
     images: 'images/**/*',
@@ -38,7 +39,8 @@ gulp.task('image', function () {
 });
 
 gulp.task('resources', function () {
-    return gulp.src(['CNAME', 'robots.txt', 'sitemap.xml', 'favicon.ico']).pipe(gulp.dest(paths.dist));
+    gulp.src(['CNAME', 'robots.txt', 'sitemap.xml', 'favicon.ico']).pipe(gulp.dest(paths.dist));
+    gulp.src(paths.font).pipe(gulp.dest(paths.dist + '/font'));
 });
 
 
