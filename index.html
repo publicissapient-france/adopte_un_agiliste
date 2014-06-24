@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Xebia IT Architects"/>
+    <meta name="reply-to" content="marketing@xebia.com"/>
+    <meta name="owner" content="Xebia IT Architects"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="content-language" content="fr"/>
+    <meta name="robots" content="follow,index,all"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link rel="icon" href="favicon.ico"/>
+
     <title>Adopte un agiliste</title>
 
+    <link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
 
     <!-- build:css css/style.css -->
     <link rel="stylesheet" href="stylesheets/reset.css"/>
     <link rel="stylesheet" href="stylesheets/main.less"/>
+    <!-- endbuild -->
+
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
+
+    <!-- build:js js/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:hbar js/templates.js -->
+    <script src="templates/agilise-miniature.handlebars"></script>
     <!-- endbuild -->
 
 </head>
@@ -14,11 +42,14 @@
 <header>
     <div class="header-content">
         <div class="centering">
-            <img src="image/adopte-un-agiliste-logo.png" alt="Logo Adopte un Agiliste" title="Adopte un agiliste"/>
+            <img src="images/header/logo-adopte-un-agiliste.png" alt="Logo Adopte un Agiliste"
+                 title="Adopte un agiliste"/>
 
             <div class="contact-bloc">
                 <div class="top-part">
-                <a href="http://www.xebia.fr" title="Logo Xebia"><img src="image/logo-xebia.png" alt="Logo Xebia"/></a>
+                    <a href="http://www.xebia.fr" title="Logo Xebia">
+                        <img src="images/header/xebia_logo-large-transparent.png" alt="Logo Xebia" class="logo-xebia"/>
+                    </a>
                 </div>
                 <div class="bottom-part">
 
@@ -29,16 +60,117 @@
 </header>
 <main>
     <section class="selected-agiliste">
+        <div class="agiliste">
+            <div class="agiliste-photo">
+                <div class="centering">
+
+                </div>
+            </div>
+
+            <div class="centering">
+                <h2>Je livre toujours en retard</h2>
+
+                <p>Lorem Ipsum Dolor Sit Amet</p>
+            </div>
+        </div>
 
     </section>
-    <section class="coach-du-mois">
+    <section class="coach-du-mois centering">
+        <h1>Nos coachs du mois</h1>
+
+        <div class="content">
+            <div class="coach-list">
+
+                <div class="agiliste">
+                    <a href="" class="agiliste-miniature">
+                        <img src="images/agiliste/benjamin_moitie_mini.png" alt="Benjamin Moitie"
+                                />
+                        <div class="mask">
+                            <div class="adopt-me-marker"></div>
+                        </div>
+
+                    </a>
+
+                    <div class="title">Backlog Spécialiste</div>
+                    <div class="description">Le barbu</div>
+                </div>
+                <div class="agiliste">
+                    <a href="" class="agiliste-miniature">
+                        <img src="images/agiliste/laurene_vol_mini.png" alt="Laurene Vol" class="agiliste-miniature"/>
+                        <div class="mask"></div>
+                    </a>
+
+                    <div class="title">Kanban experte</div>
+                    <div class="description">La pro du post-it</div>
+                </div>
+                <div class="agiliste">
+                    <a href="" class="agiliste-miniature">
+                        <img src="images/agiliste/clement_rochas_mini.png" alt="Clement Rochas"
+                             class="agiliste-miniature"/>
+                        <div class="mask"></div>
+                    </a>
+
+                    <div class="title">Le DevOps</div>
+                    <div class="description">Les valeurs d'abord !</div>
+                </div>
+
+            </div>
+
+            <button class="display-all-coach">Voir tous les coachs</button>
+        </div>
 
     </section>
-    <section class="agile">
+    <section class="agile centering">
+        <h1>Agile ?</h1>
 
+        <p>La mission de Xebia est de développer du logiciel de très haute qualité (Software Development Done Right).
+            L'ambition de notre équipe agile est de changer, dans le paysage de l'IT en France,
+            les pratiques peu efficaces et une culture tayloriste du développement logiciel. Nous vous proposons une
+            offre d'accompagnement riche et complète, depuis l'idée jusqu'à la production. Notre offre vous permettra de
+            tirer
+            le meilleur de vos équipes en les associant étroitement à notre démarche. Nous partageons également
+            généreusement notre
+            savoir-faire au travers de notre blog, de publications, ou participations aux conférences.</p>
     </section>
 </main>
 <footer>
+    <section class="social">
+        <a href="http://www.linkedin.com/company/xebia-france" class="linkedin" target="_blank">
+            <img src="images/footer/social/Img-devops-linkedin-violet.png" alt="Linkedin" class="inactive"/>
+            <img src="images/footer/social/Img-devops-linkedin-orange.png" alt="Linkedin" class="active"/>
+
+        </a>
+        <a href="https://plus.google.com/100396468532572979348/posts" class="google" target="_blank">
+            <img src="images/footer/social/Img-devops-google-violet.png" alt="Google+" class="inactive"/>
+            <img src="images/footer/social/Img-devops-google-orange.png" alt="Google+" class="active"/>
+        </a>
+        <a href="https://twitter.com/XebiaFr" class="twitter" target="_blank">
+            <img src="images/footer/social/Img-devops-tweeter-violet.png" alt="Twitter" class="inactive"/>
+            <img src="images/footer/social/Img-devops-tweeter-orange.png" alt="Twitter" class="active"/>
+        </a>
+    </section>
+
+    <section class="alliancy">
+        <div class="tagline-xebia"></div>
+        <div class="tagline-alliance">
+            <div class="alliance-wrapper">
+                <a href="http://alliance.xebia.fr" class="logo-alliance"><img
+                        src="images/footer/footer-logo-alliance.png"
+                        alt="Alliance Xebia"></a>
+
+                <div><span class="unused">=</span>
+                    <a href="http://www.xebia.fr/">Xebia</a>
+                    <span class="unused">+</span>
+                    <a href="http://xebialabs.com/">XebiaLabs</a>
+                    <span class="unused">+</span>
+                    <a href="http://www.thiga.fr/">Thiga</a>
+                    <span class="unused">+</span>
+                    <a href="http://www.ux-republic.com/">UX-Republic</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
 </footer>
 </body>
