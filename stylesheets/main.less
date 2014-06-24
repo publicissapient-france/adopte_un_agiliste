@@ -149,19 +149,51 @@ main {
           text-align: center;
 
         }
-        .adopt-me-marker {
 
+        @adoptMeSize: @agilisteBlocHeight/2;
+
+        .adopt-me-marker {
           border-radius: 100%;
-          width: @agilisteBlocHeight/2;
-          height: @agilisteBlocHeight/2;
+          width: @adoptMeSize;
+          height: @adoptMeSize;
           margin-left: auto;
           margin-right: auto;
-          margin-top: (@agilisteHeight - @agilisteBlocHeight/2)/ 2;
-          background-color: lighten(@xebiaLightColor,10%);
+          margin-top: (@agilisteHeight - @adoptMeSize)/ 2;
+          background-color: lighten(@xebiaLightColor, 10%);
+        }
+
+        @adoptMeOuterSize: @adoptMeSize + 10px;
+        .adopt-me {
+
+          display: none;
+          position: absolute;
+          width: @adoptMeOuterSize;
+          height: @adoptMeOuterSize;
+          line-height: @adoptMeOuterSize;
+          margin-top: (@agilisteHeight - @adoptMeOuterSize)/ 2;
+          margin-left: auto;
+          margin-right: auto;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          z-index: 2;
+          text-align: center;
+          border: 1px solid white;
+          border-radius: 100%;
+          color: white;
+
+          span {
+            font-size: 24px;
+            font-family: 'Handlee', cursive;
+            vertical-align: middle;
+            line-height: normal;
+            display: inline-block;
+          }
         }
 
         &:hover {
-          .mask {
+          .mask, .adopt-me {
             display: block;
           }
         }
