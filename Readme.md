@@ -1,26 +1,33 @@
 Adopte un agiliste
 
--- Meta description
--- Keywords
--- Google Analytics
+-- Meta description -> Market
+-- Keywords -> Market
+-- Google Analytics -> Market
+-- c'est quoi ce "xebia-agile" dans le footer ? -> voir avec le market
+
 -- il me faut les images du haut
+-- Le footer est pas bon -> Wendy
+-- le nom de domaine -> Faire les redirections
 
--- Le footer est pas bon
--- le nom de domaine
--- c'est quoi ce "xebia-agile" dans le footer ?
--- a quoi sert le bouton fleche ver sle bas ?
--- il se passe quoi quand je clique sur une tete d'agiliste ?
--- c'est quoi ce bouton avec une loupe
--- c'est quoi ces trucs sociaux en haut ?
--- La seconde page est en fait juste un dépliement ?
--- il fait quoi le bouton j'adopte ?
+-- a quoi sert le bouton fleche ver sle bas ? -> ancre
 
+-- il se passe quoi quand je clique sur une tete d'agiliste ? -> recevoir les maquettes, mailto pour l'instant
+-- c'est quoi ce bouton avec une loupe -> a enlever
+-- c'est quoi ces trucs sociaux en haut ? -> les enlever et vérifier auprès de Wendy
+
+
+-- il fait quoi le bouton j'adopte ? -> meme chose que le truc au dessus
+-- scroll avec les flèches
+-- Changer le libellé quand les coach sont dépliés
+
+-- me donner les tetes -> Wendy
+-- Hébergement node à pas cher ?
 
 ************
 
-Les desc dans coach du mois en violet : si c'est violet, c'est que c'est clickable non ? Si oui, ca fait quoi ?
-
 
 23 : 2h
-24 : 3H
+24 : 4H
+25 : 1h
+
 

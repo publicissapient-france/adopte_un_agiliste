@@ -16,8 +16,8 @@
 
 .box-shadow (@string) {
   -webkit-box-shadow: @string;
-  -moz-box-shadow:    @string;
-  box-shadow:         @string;
+  -moz-box-shadow: @string;
+  box-shadow: @string;
 }
 
 //Fonts
@@ -76,7 +76,7 @@ h2 {
 @backgroundMediumColor: #FCFDFF;
 
 @firstBreakPoint: 1024px;
-@maxWidthInner: @firstBreakPoint - 2 * 50px;
+@maxWidthInner: @firstBreakPoint - 2 * 100px;
 
 .centering {
   max-width: @firstBreakPoint;
@@ -103,10 +103,13 @@ header {
     .logo-xebia {
       height: 30px;
     }
+
   }
 }
 
 main {
+
+  background-color: @backgroundMediumColor;
 
   .selected-agiliste {
     background-color: white;
@@ -127,12 +130,28 @@ main {
     .centering {
       max-width: @maxWidthInner;
       text-align: left;
+
+      position:relative;
+    }
+
+
+    .adopt-me {
+      background-color: @xebiaColor;
+      color: white;
+      border:none;
+      padding:5px 40px;
+      font-family: 'Handlee', cursive;
+      font-size:24px;
+      cursor:pointer;
+      position:absolute;
+      bottom:5px;
+      right:10px;
+      border-radius:5px;
     }
 
   }
 
   .coach-du-mois {
-    background-color: @backgroundMediumColor;
 
     .content {
       max-width: @maxWidthInner;
@@ -266,7 +285,6 @@ main {
     }
   }
   .agile {
-    background-color: @backgroundMediumColor;
 
     p {
       padding-left: @paddingLeftRight;
