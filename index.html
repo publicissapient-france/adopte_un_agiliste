@@ -32,6 +32,7 @@
 
     <!-- build:hbar js/templates.js -->
     <script src="templates/agiliste-miniature.handlebars"></script>
+    <script src="templates/agiliste-main-text.handlebars"></script>
     <!-- endbuild -->
 
     <!-- build:js js/main.js -->
@@ -79,21 +80,9 @@
                 </div>
             </div>
         </div>
-        <div class="scroll-wrapper">
-            <div class="centering bottom">
-                <h2>Je livre toujours en retard</h2>
-
-                <p>La mission de Xebia est de développer du logiciel de très haute qualité (Software Development Done
-                    Right).
-                    L'ambition de notre équipe agile est de changer, dans le paysage de l'IT en France,
-                    les pratiques peu efficaces et une culture tayloriste du développement logiciel. Nous vous proposons
-                    une
-                    offre d'accompagnement riche et complète, depuis l'idée jusqu'à la production. Notre offre vous
-                    permettra de
-                    tirer
-                    le meilleur de vos équipes en les associant étroitement à notre démarche. Nous partageons également
-                    généreusement notre
-                    savoir-faire au travers de notre blog, de publications, ou participations aux conférences.</p>
+        <div id="agiliste-main-text-wrapper" class="scroll-wrapper centering bottom">
+            <div class="scroller" style="left:0">
+            <!-- remplissage dynamique -->
             </div>
         </div>
     </section>

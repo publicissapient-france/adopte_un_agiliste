@@ -134,7 +134,21 @@ main {
     margin-bottom: 20px;
     padding-bottom: 20px;
 
+    .scroll-wrapper {
+      position: relative;
+      overflow: hidden;
 
+      .scroller {
+        position:relative;
+        .transition(all 1s)
+      }
+
+      .agiliste-text-wrapper {
+        position: absolute;
+        width: @maxWidthInner;
+        margin:0 (@firstBreakPoint - @maxWidthInner) /2;
+      }
+    }
     @heightPhoto: 270px;
 
     .buttons {
@@ -218,9 +232,10 @@ main {
     }
 
     .bottom {
-      max-width: @maxWidthInner;
+      max-width: @firstBreakPoint;
       margin-left: auto;
       margin-right: auto;
+      min-height:230px;
 
       p {
         text-align: justify;
