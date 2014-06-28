@@ -2,6 +2,11 @@ $(function () {
 
     $('.display-all-coach').click(function () {
         $('#coach-list').toggleClass('open');
+        var $button = $(this);
+        var hiddenText = $button.data('hiddentext');
+        var currentText = $button.html();
+        $button.html(hiddenText);
+        $button.data('hiddentext', currentText);
     });
 
 
