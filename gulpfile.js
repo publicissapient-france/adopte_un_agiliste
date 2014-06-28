@@ -23,7 +23,7 @@ var paths = {
 
 };
 
-gulp.task('clean', function (cb) {
+gulp.task('clean', function () {
     return gulp.src(paths.dist, {read: false})
         .pipe(clean());
 });

@@ -31,3 +31,8 @@ Adopte un agiliste
 25 : 1h
 
 
+
+**********************
+   npm install
+   ./node_modules/.bin/gulp watch
+   ./node_modules/.bin/gulp deploy

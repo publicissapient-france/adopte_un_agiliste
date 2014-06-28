@@ -118,37 +118,86 @@ main {
     padding-bottom: 20px;
 
     @heightPhoto: 270px;
-    .agiliste-photo {
-      background-color: black;
-      min-height: @heightPhoto;
 
-      .agiliste-big {
-        height: @heightPhoto;
+    .top {
+      height: @heightPhoto;
+      background-color: black;
+      .centering {
+        position: relative;
+      }
+
+      .agiliste-photo {
+        max-width: @maxWidthInner;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+
+        img {
+          height: @heightPhoto;
+        }
+      }
+
+      @heightButtonScroll: 60px;
+      .left-scroll, .right-scroll {
+        position: absolute;
+        bottom: -27px;
+        border: none;
+        background-color: @xebiaColor;
+        color: white;
+        font-size: 24px;
+        font-weight: 100;
+        width: @heightButtonScroll;
+        height: @heightButtonScroll;
+        border-radius: 100%;
+        opacity: 0.7;
+        line-height: 50px;
+        cursor: pointer;
+
+        &:before {
+          font-size: 42px;
+          font-weight: 100;
+        }
+      }
+
+      .left-scroll {
+        left: 20px;
+        &:before {
+          content: '<';
+          padding-right: 5px;
+        }
+      }
+      .right-scroll {
+        right: 20px;
+        &:before {
+          content: '>';
+          padding-left: 5px;
+        }
       }
     }
-
-    .centering {
-      max-width: @maxWidthInner;
-      text-align: left;
-
-      position:relative;
-    }
-
 
     .adopt-me {
       background-color: @xebiaColor;
       color: white;
-      border:none;
-      padding:5px 40px;
+      border: none;
+      padding: 5px 40px;
       font-family: 'Handlee', cursive;
-      font-size:24px;
-      cursor:pointer;
-      position:absolute;
-      bottom:5px;
-      right:10px;
-      border-radius:5px;
+      font-size: 24px;
+      cursor: pointer;
+      position: absolute;
+      bottom: 5px;
+      right: 10px;
+      border-radius: 5px;
     }
 
+    .bottom {
+      max-width: @maxWidthInner;
+      margin-left: auto;
+      margin-right: auto;
+
+      p {
+        text-align: justify;
+      }
+    }
   }
 
   .coach-du-mois {
