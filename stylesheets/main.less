@@ -105,19 +105,19 @@ header {
     }
 
     .top-part {
-      text-align:right;
+      text-align: right;
     }
     .bottom-part {
-      margin-top:15px;
+      margin-top: 15px;
       a {
-      color:@xebiaColor;
-      text-decoration: none;
-      margin-left:45px;
-
-      &:visited {
-        color:@xebiaColor;
+        color: @xebiaColor;
         text-decoration: none;
-      }
+        margin-left: 45px;
+
+        &:visited {
+          color: @xebiaColor;
+          text-decoration: none;
+        }
       }
     }
 
@@ -139,14 +139,14 @@ main {
       overflow: hidden;
 
       .scroller {
-        position:relative;
+        position: relative;
         .transition(all 1s)
       }
 
-      .agiliste-text-wrapper {
+      .agiliste-text-wrapper, .agiliste-photo-wrapper {
         position: absolute;
         width: @maxWidthInner;
-        margin:0 (@firstBreakPoint - @maxWidthInner) /2;
+        margin: 0 (@firstBreakPoint - @maxWidthInner) /2;
       }
     }
     @heightPhoto: 270px;
@@ -157,9 +157,9 @@ main {
 
     @heightButtonScroll: 60px;
     .left-scroll, .right-scroll {
-      z-index:3;
+      z-index: 3;
       position: absolute;
-      top:@heightPhoto - @heightButtonScroll/2;
+      top: @heightPhoto - @heightButtonScroll/2;
       border: none;
       background-color: @xebiaColor;
       color: white;
@@ -193,12 +193,14 @@ main {
       }
     }
 
-
     .top {
       height: @heightPhoto;
       background-color: black;
-      .centering {
-        position: relative;
+      .scroll-wrapper {
+        max-width: @firstBreakPoint;
+        margin-left: auto;
+        margin-right: auto;
+        height: 100%;
       }
 
       .agiliste-photo {
@@ -212,11 +214,10 @@ main {
         }
       }
 
-
     }
 
     .adopt-me {
-      z-index:4;
+      z-index: 4;
       background-color: @xebiaColor;
       color: white;
       border: none;
@@ -235,7 +236,7 @@ main {
       max-width: @firstBreakPoint;
       margin-left: auto;
       margin-right: auto;
-      min-height:230px;
+      min-height: 230px;
 
       p {
         text-align: justify;
@@ -385,7 +386,7 @@ main {
     }
 
     border-bottom: 1px solid #E1E1E1;
-    padding-bottom:75px;
+    padding-bottom: 75px;
   }
 
 }

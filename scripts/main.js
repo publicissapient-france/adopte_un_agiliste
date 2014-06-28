@@ -60,7 +60,9 @@ $(function () {
                 "tirer" +
                 "le meilleur de vos équipes en les associant étroitement à notre démarche. Nous partageons également" +
                 "généreusement notre" +
-                "savoir-faire au travers de notre blog, de publications, ou participations aux conférences.'"
+                "savoir-faire au travers de notre blog, de publications, ou participations aux conférences.'",
+            name:'Gwenael Bonhommeau',
+            image_url:'gweneal_bonhommeau.JPG'
         },
         {
             title: 'Je livre toujours en retard 2',
@@ -74,7 +76,9 @@ $(function () {
                 "tirer" +
                 "le meilleur de vos équipes en les associant étroitement à notre démarche. Nous partageons également" +
                 "généreusement notre" +
-                "savoir-faire au travers de notre blog, de publications, ou participations aux conférences.'"
+                "savoir-faire au travers de notre blog, de publications, ou participations aux conférences.'",
+            name:'Gwenael Bonhommeau',
+            image_url:'gweneal_bonhommeau.JPG'
         },
         {
             title: 'Je livre toujours en retard 3',
@@ -88,22 +92,37 @@ $(function () {
                 "tirer" +
                 "le meilleur de vos équipes en les associant étroitement à notre démarche. Nous partageons également" +
                 "généreusement notre" +
-                "savoir-faire au travers de notre blog, de publications, ou participations aux conférences.'"
+                "savoir-faire au travers de notre blog, de publications, ou participations aux conférences.'",
+            name:'Gwenael Bonhommeau',
+            image_url:'gweneal_bonhommeau.JPG'
         }
 
 
     ];
     var agilisteMainTextTpl = TEMPLATES['agiliste-main-text'];
     var htmlMainText = agilisteMainTexts.map(function (agiliste) {
-
         return agilisteMainTextTpl(agiliste);
     }).join('');
 
-    $('#agiliste-main-text-wrapper .scroller').append(htmlMainText);
+
+    var $agilisteMainTextScroller = $('#agiliste-main-text-wrapper .scroller');
+    $agilisteMainTextScroller.append(htmlMainText);
     $('.agiliste-text-wrapper').each(function (idx) {
         var $wrapper = $(this);
         $wrapper.css('left', idx * $(this).outerWidth(true));
+    });
 
+
+    var agilistePhotoTpl = TEMPLATES['agiliste-photo-wrapper'];
+    var htmlPhoto = agilisteMainTexts.map(function(agiliste) {
+        agiliste.image_url = 'images/agiliste/' + agiliste.image_url;
+        return agilistePhotoTpl(agiliste);
+    }).join('');
+
+    $('#scroller-photo-agiliste').append(htmlPhoto);
+    $('.agiliste-photo-wrapper').each(function (idx) {
+        var $wrapper = $(this);
+        $wrapper.css('left', idx * $(this).outerWidth(true));
     });
 
     var scrollerModel = {
@@ -128,7 +147,8 @@ $(function () {
             return $('.agiliste-text-wrapper').outerWidth(true);
         },
         displayNewPosition: function () {
-            $('#agiliste-main-text-wrapper .scroller').css('left', -this.currentPosition * this.width());
+            $agilisteMainTextScroller.css('left', -this.currentPosition * this.width());
+            $('#scroller-photo-agiliste').css('left', -this.currentPosition * this.width());
         }
     };
 
