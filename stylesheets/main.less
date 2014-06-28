@@ -82,6 +82,10 @@ h2 {
   max-width: @firstBreakPoint;
   margin-left: auto;
   margin-right: auto;
+
+  @media (max-width: @firstBreakPoint) {
+    width: 100%;
+  }
 }
 
 header {
@@ -113,6 +117,9 @@ header {
         color: @xebiaColor;
         text-decoration: none;
         margin-left: 45px;
+        @media (max-width: 470px) {
+          margin-left: 5px;
+        }
 
         &:visited {
           color: @xebiaColor;
@@ -140,13 +147,22 @@ main {
 
       .scroller {
         position: relative;
-        .transition(all 1s)
+        .transition(all 1s);
+
+        @media (max-width: @firstBreakPoint) {
+          margin: 0 20px;
+        }
       }
 
       .agiliste-text-wrapper, .agiliste-photo-wrapper {
         position: absolute;
         width: @maxWidthInner;
         margin: 0 (@firstBreakPoint - @maxWidthInner) /2;
+        @media (max-width: @firstBreakPoint) {
+          margin:0;
+          width: 100%;
+          margin-right:20px;
+        }
       }
     }
     @heightPhoto: 270px;
@@ -228,15 +244,29 @@ main {
       position: absolute;
       top: @heightPhoto - 70px;
       right: 100px;
+      @media (max-width: 470px) {
+        right: 0;
+        left: 0;
+        top:@heightPhoto - 85px;
+        width:100%;
+        opacity: 0.7;
+      }
 
       border-radius: 5px;
     }
 
     .bottom {
-      max-width: @firstBreakPoint;
-      margin-left: auto;
-      margin-right: auto;
       min-height: 230px;
+
+      @media (max-width: @firstBreakPoint) {
+        margin-top: 40px;
+        min-height: 380px;
+      }
+
+      @media (max-width: 600px) {
+        margin-top: 40px;
+        min-height: 530px;
+      }
 
       p {
         text-align: justify;
@@ -414,9 +444,6 @@ footer {
       margin: 0 20px;
       font-size: 24px;
 
-      @media (max-width: 450px) {
-        margin: 0;
-      }
 
       &:hover {
         background-color: @xebiaColor;
@@ -448,8 +475,8 @@ footer {
       background: url('../images/footer/footer-logo-xebia.png') 0 20px no-repeat @footerColor;
 
       @media (max-width: 470px) {
-        background: url('../images/footer/footer-logo-xebia.png') 0 20px no-repeat @footerColor;
-        height: 55px;
+        background: url('../images/footer/footer-logo-xebia.png') center 0 no-repeat @footerColor;
+        height: 45px;
         margin-bottom: 10px;
         width: 100%;
       }

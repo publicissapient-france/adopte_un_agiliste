@@ -61,8 +61,8 @@ $(function () {
                 "le meilleur de vos équipes en les associant étroitement à notre démarche. Nous partageons également" +
                 "généreusement notre" +
                 "savoir-faire au travers de notre blog, de publications, ou participations aux conférences.'",
-            name:'Gwenael Bonhommeau',
-            image_url:'gweneal_bonhommeau.JPG'
+            name: 'Gwenael Bonhommeau',
+            image_url: 'gweneal_bonhommeau.JPG'
         },
         {
             title: 'Je livre toujours en retard 2',
@@ -77,8 +77,8 @@ $(function () {
                 "le meilleur de vos équipes en les associant étroitement à notre démarche. Nous partageons également" +
                 "généreusement notre" +
                 "savoir-faire au travers de notre blog, de publications, ou participations aux conférences.'",
-            name:'Gwenael Bonhommeau',
-            image_url:'gweneal_bonhommeau.JPG'
+            name: 'Gwenael Bonhommeau',
+            image_url: 'gweneal_bonhommeau.JPG'
         },
         {
             title: 'Je livre toujours en retard 3',
@@ -93,8 +93,8 @@ $(function () {
                 "le meilleur de vos équipes en les associant étroitement à notre démarche. Nous partageons également" +
                 "généreusement notre" +
                 "savoir-faire au travers de notre blog, de publications, ou participations aux conférences.'",
-            name:'Gwenael Bonhommeau',
-            image_url:'gweneal_bonhommeau.JPG'
+            name: 'Gwenael Bonhommeau',
+            image_url: 'gweneal_bonhommeau.JPG'
         }
 
 
@@ -104,26 +104,17 @@ $(function () {
         return agilisteMainTextTpl(agiliste);
     }).join('');
 
-
     var $agilisteMainTextScroller = $('#agiliste-main-text-wrapper .scroller');
     $agilisteMainTextScroller.append(htmlMainText);
-    $('.agiliste-text-wrapper').each(function (idx) {
-        var $wrapper = $(this);
-        $wrapper.css('left', idx * $(this).outerWidth(true));
-    });
-
+    var widthOfOneElement = $('.agiliste-text-wrapper').outerWidth(true);
 
     var agilistePhotoTpl = TEMPLATES['agiliste-photo-wrapper'];
-    var htmlPhoto = agilisteMainTexts.map(function(agiliste) {
+    var htmlPhoto = agilisteMainTexts.map(function (agiliste) {
         agiliste.image_url = 'images/agiliste/' + agiliste.image_url;
         return agilistePhotoTpl(agiliste);
     }).join('');
 
     $('#scroller-photo-agiliste').append(htmlPhoto);
-    $('.agiliste-photo-wrapper').each(function (idx) {
-        var $wrapper = $(this);
-        $wrapper.css('left', idx * $(this).outerWidth(true));
-    });
 
     var scrollerModel = {
         currentPosition: 0,
@@ -143,14 +134,31 @@ $(function () {
 
             this.displayNewPosition();
         },
-        width: function () {
-            return $('.agiliste-text-wrapper').outerWidth(true);
-        },
         displayNewPosition: function () {
-            $agilisteMainTextScroller.css('left', -this.currentPosition * this.width());
-            $('#scroller-photo-agiliste').css('left', -this.currentPosition * this.width());
+            $agilisteMainTextScroller.css('left', -this.currentPosition * widthOfOneElement);
+            $('#scroller-photo-agiliste').css('left', -this.currentPosition * widthOfOneElement);
         }
     };
+
+
+    var leftPostionElement = function (idx) {
+        var $wrapper = $(this);
+        $wrapper.css('left', idx * widthOfOneElement);
+    }
+
+    var leftPositioningAgiliste = function () {
+        widthOfOneElement = $('.agiliste-text-wrapper').outerWidth(true);
+        $('.agiliste-photo-wrapper').each(leftPostionElement);
+        $('.agiliste-text-wrapper').each(leftPostionElement);
+        scrollerModel.displayNewPosition();
+    };
+
+
+    $(window).resize(function () {
+        leftPositioningAgiliste();
+    });
+    leftPositioningAgiliste();
+
 
     $('.left-scroll').click(function () {
         scrollerModel.scrollLeft();
