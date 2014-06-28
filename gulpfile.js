@@ -24,41 +24,36 @@ var paths = {
 
 };
 
-gulp.task('clean', function () {
+var distTasks = ['clean', 'image', 'usemin', 'resources', 'fonts'];
+
+var clean = function () {
     return gulp.src(paths.dist, {read: false})
         .pipe(clean());
-});
-
-var distTasks = ['clean', 'image', 'usemin', 'resources', 'fonts'];
-gulp.task('deploy', distTasks, function () {
+};
+var deploy = function () {
     return gulp.src(paths.dist + '/**/*')
         .pipe(deploy());
-});
-
-gulp.task('image', function () {
+};
+var image = function () {
     return gulp.src(paths.images).pipe(imagemin()).pipe(gulp.dest(paths.dist + '/images'));
-});
-
-gulp.task('resources', function () {
+};
+var resources = function () {
     gulp.src(paths.resources).pipe(gulp.dest(paths.dist));
-
-});
-
-gulp.task('fonts', function () {
+};
+var fonts = function () {
     gulp.src(paths.font).pipe(gulp.dest(paths.dist + '/font'));
-});
-
-gulp.task('usemin', function () {
+};
+var usemin = function () {
     return gulp.src(paths.html).pipe(usemin({
         css: [less(), 'concat', minifyCss(), rev()],
         js: ['concat', uglify(), rev()],
         hbar: [handlebars(), defineModule('plain'), declare({namespace: 'TEMPLATES'}), 'concat', uglify(), rev()]
     })).pipe(gulp.dest(paths.dist));
-});
-
-gulp.task('watch', distTasks, function () {
+};
+var watch = function () {
     gulp.watch([paths.html, paths.templates, paths.stylesheets, paths.scripts], ['usemin']);
     gulp.watch([paths.images], ['image']);
     gulp.watch(paths.resources, ['resources']);
     gulp.watch([paths.font], ['fonts']);
-});
+};
+
