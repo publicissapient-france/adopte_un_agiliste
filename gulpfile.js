@@ -19,7 +19,8 @@ var paths = {
     templates: 'templates/**/*',
     images: 'images/**/*',
     html: '*.html',
-    dist: 'dist'
+    dist: 'dist',
+    resources: ['CNAME', 'robots.txt', 'sitemap.xml', 'favicon.ico']
 
 };
 
@@ -28,7 +29,7 @@ gulp.task('clean', function () {
         .pipe(clean());
 });
 
-var distTasks = ['clean', 'image', 'usemin', 'resources'];
+var distTasks = ['clean', 'image', 'usemin', 'resources', 'fonts'];
 gulp.task('deploy', distTasks, function () {
     return gulp.src(paths.dist + '/**/*')
         .pipe(deploy());
@@ -39,10 +40,13 @@ gulp.task('image', function () {
 });
 
 gulp.task('resources', function () {
-    gulp.src(['CNAME', 'robots.txt', 'sitemap.xml', 'favicon.ico']).pipe(gulp.dest(paths.dist));
-    gulp.src(paths.font).pipe(gulp.dest(paths.dist + '/font'));
+    gulp.src(paths.resources).pipe(gulp.dest(paths.dist));
+
 });
 
+gulp.task('fonts', function () {
+    gulp.src(paths.font).pipe(gulp.dest(paths.dist + '/font'));
+});
 
 gulp.task('usemin', function () {
     return gulp.src(paths.html).pipe(usemin({
@@ -53,6 +57,8 @@ gulp.task('usemin', function () {
 });
 
 gulp.task('watch', distTasks, function () {
-    gulp.watch([paths.html, paths.templates, paths.stylesheets, paths.scripts], ['usemin'])
-    gulp.watch([paths.images], ['image'])
+    gulp.watch([paths.html, paths.templates, paths.stylesheets, paths.scripts], ['usemin']);
+    gulp.watch([paths.images], ['image']);
+    gulp.watch(paths.resources, ['resources']);
+    gulp.watch([paths.font], ['fonts']);
 });
