@@ -24,36 +24,49 @@ var paths = {
 
 };
 
-var distTasks = ['clean', 'image', 'usemin', 'resources', 'fonts'];
+var distTasks = ['_image', '_usemin', '_resources', '_fonts'];
+(function () {
+    var cleanTask = function () {
+        return gulp.src(paths.dist, {read: false})
+            .pipe(clean());
+    };
+    var deployTask = function () {
+        return gulp.src(paths.dist + '/**/*')
+            .pipe(deploy());
+    };
+    var imageTask = function () {
+        return gulp.src(paths.images).pipe(imagemin()).pipe(gulp.dest(paths.dist + '/images'));
+    };
+    var resourcesTask = function () {
+        gulp.src(paths.resources).pipe(gulp.dest(paths.dist));
+    };
+    var fontsTask = function () {
+        gulp.src(paths.font).pipe(gulp.dest(paths.dist + '/font'));
+    };
+    var useminTask = function () {
+        return gulp.src(paths.html).pipe(usemin({
+            css: [less(), 'concat', minifyCss(), rev()],
+            js: ['concat', uglify(), rev()],
+            hbar: [handlebars(), defineModule('plain'), declare({namespace: 'TEMPLATES'}), 'concat', uglify(), rev()]
+        })).pipe(gulp.dest(paths.dist));
+    };
+    var watchTask = function () {
+        gulp.watch([paths.html, paths.templates, paths.stylesheets, paths.scripts], ['usemin']);
+        gulp.watch([paths.images], ['image']);
+        gulp.watch(paths.resources, ['resources']);
+        gulp.watch([paths.font], ['fonts']);
+    };
 
-var clean = function () {
-    return gulp.src(paths.dist, {read: false})
-        .pipe(clean());
-};
-var deploy = function () {
-    return gulp.src(paths.dist + '/**/*')
-        .pipe(deploy());
-};
-var image = function () {
-    return gulp.src(paths.images).pipe(imagemin()).pipe(gulp.dest(paths.dist + '/images'));
-};
-var resources = function () {
-    gulp.src(paths.resources).pipe(gulp.dest(paths.dist));
-};
-var fonts = function () {
-    gulp.src(paths.font).pipe(gulp.dest(paths.dist + '/font'));
-};
-var usemin = function () {
-    return gulp.src(paths.html).pipe(usemin({
-        css: [less(), 'concat', minifyCss(), rev()],
-        js: ['concat', uglify(), rev()],
-        hbar: [handlebars(), defineModule('plain'), declare({namespace: 'TEMPLATES'}), 'concat', uglify(), rev()]
-    })).pipe(gulp.dest(paths.dist));
-};
-var watch = function () {
-    gulp.watch([paths.html, paths.templates, paths.stylesheets, paths.scripts], ['usemin']);
-    gulp.watch([paths.images], ['image']);
-    gulp.watch(paths.resources, ['resources']);
-    gulp.watch([paths.font], ['fonts']);
-};
+    gulp.task('clean', cleanTask);
+    gulp.task('fonts', fontsTask);
+    gulp.task('resources', resourcesTask);
+    gulp.task('image', imageTask);
+    gulp.task('usemin', useminTask);
+    gulp.task('_fonts', ['clean'], fontsTask);
+    gulp.task('_resources', ['clean'], resourcesTask);
+    gulp.task('_image', ['clean'], imageTask);
+    gulp.task('_usemin', ['clean'], useminTask);
+    gulp.task('watch', distTasks, watchTask);
 
+    gulp.task('deploy', distTasks, deployTask);
+})();
