@@ -10,29 +10,10 @@ $(function () {
     });
 
 
+    //partie miniatures
     var agilisteMiniatureTemplate = TEMPLATES['agiliste-miniature'];
 
-    var agilistes = [
-        {
-            image_url: 'benjamin_moitie_mini.png',
-            name: 'Benjamin Moitié',
-            title: 'Backlog Spécialiste',
-            description: 'Le barbu'
-        },
-        {
-            image_url: 'laurene_vol_mini.png',
-            name: 'Laurène Vol',
-            title: 'Kanban Experte',
-            description: 'La pro du post-it'
-        },
-        {
-            image_url: 'clement_rochas_mini.png',
-            name: 'Clément Rochas',
-            title: 'Le DevOps',
-            description: "Les valeurs d'abord !"
-        }
-
-    ];
+    var agilistes = AGILISTE_MINIATURE;
 
     var html = agilistes.map(function (agiliste) {
         agiliste.image_url = 'images/agiliste/' + agiliste.image_url;
@@ -41,70 +22,14 @@ $(function () {
 
     $('#coach-list').append(html);
 
-    //TODO A DEGAGER
-    $('#coach-list').append(html);
-    $('#coach-list').append(html);
-
-
-    ///part principal
-    var agilisteMainTexts = [
-        {
-            title: 'Je livre toujours en retard',
-            text: "La mission de Xebia est de développer du logiciel de très haute qualité (Software Development Done" +
-                "Right)." +
-                "L'ambition de notre équipe agile est de changer, dans le paysage de l'IT en France," +
-                "les pratiques peu efficaces et une culture tayloriste du développement logiciel. Nous vous proposons" +
-                "une" +
-                "offre d'accompagnement riche et complète, depuis l'idée jusqu'à la production. Notre offre vous" +
-                "permettra de" +
-                "tirer" +
-                "le meilleur de vos équipes en les associant étroitement à notre démarche. Nous partageons également" +
-                "généreusement notre" +
-                "savoir-faire au travers de notre blog, de publications, ou participations aux conférences.'",
-            name: 'Gwenael Bonhommeau',
-            image_url: 'gweneal_bonhommeau.JPG'
-        },
-        {
-            title: 'Je livre toujours en retard 2',
-            text: "La mission de Xebia est de développer du logiciel de très haute qualité (Software Development Done" +
-                "Right)." +
-                "L'ambition de notre équipe agile est de changer, dans le paysage de l'IT en France," +
-                "les pratiques peu efficaces et une culture tayloriste du développement logiciel. Nous vous proposons" +
-                "une" +
-                "offre d'accompagnement riche et complète, depuis l'idée jusqu'à la production. Notre offre vous" +
-                "permettra de" +
-                "tirer" +
-                "le meilleur de vos équipes en les associant étroitement à notre démarche. Nous partageons également" +
-                "généreusement notre" +
-                "savoir-faire au travers de notre blog, de publications, ou participations aux conférences.'",
-            name: 'Gwenael Bonhommeau',
-            image_url: 'gweneal_bonhommeau.JPG'
-        },
-        {
-            title: 'Je livre toujours en retard 3',
-            text: "La mission de Xebia est de développer du logiciel de très haute qualité (Software Development Done" +
-                "Right)." +
-                "L'ambition de notre équipe agile est de changer, dans le paysage de l'IT en France," +
-                "les pratiques peu efficaces et une culture tayloriste du développement logiciel. Nous vous proposons" +
-                "une" +
-                "offre d'accompagnement riche et complète, depuis l'idée jusqu'à la production. Notre offre vous" +
-                "permettra de" +
-                "tirer" +
-                "le meilleur de vos équipes en les associant étroitement à notre démarche. Nous partageons également" +
-                "généreusement notre" +
-                "savoir-faire au travers de notre blog, de publications, ou participations aux conférences.'",
-            name: 'Gwenael Bonhommeau',
-            image_url: 'gweneal_bonhommeau.JPG'
-        }
-
-
-    ];
+    ///partie principale
+    var agilisteMainTexts = AGILISTE_MAIN;
     var agilisteMainTextTpl = TEMPLATES['agiliste-main-text'];
     var htmlMainText = agilisteMainTexts.map(function (agiliste) {
         return agilisteMainTextTpl(agiliste);
     }).join('');
 
-    var $agilisteMainTextScroller = $('#agiliste-main-text-wrapper .scroller');
+    var $agilisteMainTextScroller = $('#agiliste-main-text-wrapper');
     $agilisteMainTextScroller.append(htmlMainText);
     var widthOfOneElement = $('.agiliste-text-wrapper').outerWidth(true);
 
@@ -135,35 +60,32 @@ $(function () {
             this.displayNewPosition();
         },
         displayNewPosition: function () {
-            $agilisteMainTextScroller.css('left', -this.currentPosition * widthOfOneElement);
-            $('#scroller-photo-agiliste').css('left', -this.currentPosition * widthOfOneElement);
+            var newLeftPosition = -this.currentPosition * widthOfOneElement;
+            $agilisteMainTextScroller.css('left', newLeftPosition);
+            $('#scroller-photo-agiliste').css('left', newLeftPosition);
         }
     };
 
 
     var leftPostionElement = function (idx) {
-        var $wrapper = $(this);
-        $wrapper.css('left', idx * widthOfOneElement);
-    }
+        $(this).css('left', idx * widthOfOneElement);
+    };
 
     var leftPositioningAgiliste = function () {
-        widthOfOneElement = $('.agiliste-text-wrapper').outerWidth(true);
+        var $agilisteTextWrapper = $('.agiliste-text-wrapper');
+        widthOfOneElement = $agilisteTextWrapper.outerWidth(true);
         $('.agiliste-photo-wrapper').each(leftPostionElement);
-        $('.agiliste-text-wrapper').each(leftPostionElement);
+        $agilisteTextWrapper.each(leftPostionElement);
         scrollerModel.displayNewPosition();
     };
 
-
-    $(window).resize(function () {
-        leftPositioningAgiliste();
-    });
+    $(window).resize(leftPositioningAgiliste);
     leftPositioningAgiliste();
 
-
     $('.left-scroll').click(function () {
-        scrollerModel.scrollLeft();
+        scrollerModel.scrollLeft()
     });
     $('.right-scroll').click(function () {
-        scrollerModel.scrollRight();
+        scrollerModel.scrollRight()
     });
 });
