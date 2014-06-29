@@ -91,6 +91,7 @@ h2 {
 header {
   background-color: @xebiaColor;
   padding-top: 15px;
+  height:105px;
 
   .header-content {
     padding: 10px 0;
@@ -98,7 +99,7 @@ header {
 
     .centering {
       .clearFloat();
-      
+
       > img {
         margin-left: 10px;
       }
@@ -140,11 +141,17 @@ header {
   }
 }
 
-main {
+html,body {
+  height:100%;
+}
 
+main {
+  height:100%;
+  @heightPhoto: 270px;
   background-color: @backgroundMediumColor;
 
   .selected-agiliste {
+    min-height:~"calc(100% - 205px)"; //provient de la taille du header
     background-color: white;
     .box-shadow(8px 0px 15px #aaa);
     margin-bottom: 20px;
@@ -174,7 +181,7 @@ main {
         }
       }
     }
-    @heightPhoto: 270px;
+
 
     .buttons {
       position: relative;
@@ -265,17 +272,13 @@ main {
     }
 
     .bottom {
-      min-height: 230px;
+
+      height:100%;
 
       @media (max-width: @firstBreakPoint) {
         margin-top: 40px;
-        min-height: 380px;
       }
 
-      @media (max-width: 600px) {
-        margin-top: 40px;
-        min-height: 530px;
-      }
 
       p {
         text-align: justify;
