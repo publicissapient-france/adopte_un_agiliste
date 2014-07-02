@@ -23,6 +23,7 @@ Adopte un agiliste
 24 : 4H
 25 : 1h
 28 : 4h
+29 : 1h
 
 
 

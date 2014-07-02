@@ -91,7 +91,7 @@ h2 {
 header {
   background-color: @xebiaColor;
   padding-top: 15px;
-  height:105px;
+  height: 105px;
 
   .header-content {
     padding: 10px 0;
@@ -141,17 +141,17 @@ header {
   }
 }
 
-html,body {
-  height:100%;
+html, body {
+  height: 100%;
 }
 
 main {
-  height:100%;
+
   @heightPhoto: 270px;
   background-color: @backgroundMediumColor;
 
   .selected-agiliste {
-    min-height:~"calc(100% - 205px)"; //provient de la taille du header
+
     background-color: white;
     .box-shadow(8px 0px 15px #aaa);
     margin-bottom: 20px;
@@ -164,6 +164,7 @@ main {
       .scroller {
         position: relative;
         .transition(all 1s);
+        width: 8000px;
 
         @media (max-width: @firstBreakPoint) {
           margin: 0 20px;
@@ -171,17 +172,22 @@ main {
       }
 
       .agiliste-text-wrapper, .agiliste-photo-wrapper {
-        position: absolute;
+        position: relative;
+        display: inline-block;
         width: @maxWidthInner;
         margin: 0 (@firstBreakPoint - @maxWidthInner) /2;
         @media (max-width: @firstBreakPoint) {
           margin: 0;
-          width: 100%;
-          margin-right: 20px;
-        }
-      }
-    }
 
+          width: 100vw;
+          > p {
+            margin-right: 20px;
+          }
+        }
+
+      }
+
+    }
 
     .buttons {
       position: relative;
@@ -273,12 +279,11 @@ main {
 
     .bottom {
 
-      height:100%;
+      height: 100%;
 
       @media (max-width: @firstBreakPoint) {
         margin-top: 40px;
       }
-
 
       p {
         text-align: justify;
@@ -466,6 +471,20 @@ footer {
 
   }
 
+  .address {
+    background-color: @xebiaColor;
+    color: white;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    a {
+      text-decoration: none;
+      color: white;
+
+    }
+
+  }
   .alliancy {
 
     @footerColor: @backgroundMediumColor;

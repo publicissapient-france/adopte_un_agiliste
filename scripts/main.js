@@ -66,16 +66,10 @@ $(function () {
         }
     };
 
-
-    var leftPostionElement = function (idx) {
-        $(this).css('left', idx * widthOfOneElement);
-    };
-
     var leftPositioningAgiliste = function () {
         var $agilisteTextWrapper = $('.agiliste-text-wrapper');
         widthOfOneElement = $agilisteTextWrapper.outerWidth(true);
-        $('.agiliste-photo-wrapper').each(leftPostionElement);
-        $agilisteTextWrapper.each(leftPostionElement);
+
         scrollerModel.displayNewPosition();
     };
 
