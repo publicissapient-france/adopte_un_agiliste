@@ -82,4 +82,8 @@ $(function () {
     $('.right-scroll').click(function () {
         scrollerModel.scrollRight()
     });
+
+    $('.adopt-me').click(function() {
+        //$('#adopt-me-modal').modal({})
+    })
 });
