@@ -1,31 +1,27 @@
 Adopte un agiliste
+==================
+
+Prérequis
+---------
+
+  *  Installer node ([nvm](https://github.com/creationix/nvm) ou [node](http://nodejs.org/))
+  *  Installer [git](http://git-scm.com/)
+  *  Cloner le repository <code>git clone git@github.com:xebia-france/adopte_un_agiliste.git</code>
+
+Travailler sur le site
+----------------------
+  *  Ouvrir un terminal
+  *  Aller dans le répertoire contenant le repository
+  *  Lancer la commande <code>npm install</code>
+  *  Lancer la commande <code>./node_modules/.bin/gulp watch</code>
+  *  Faire les modifications voulues
+  *  Tester le site en  ouvrant le fichier index.html du répertoire dist dans un navigateur
 
 
--- il me faut les images du haut
--- le nom de domaine -> Faire les redirections
+Déployer le site en prod
+------------------------
+  *  Ouvrir un terminal
+  *  Aller dans le répertoire contenant le repository
+  *  Lancer la commande <code>npm install</code>
+  *  Lancer la commande <code>./node_modules/.bin/gulp deploy</code>
 
--- a quoi sert le bouton fleche ver sle bas ? -> ancre
-
-
-
-
--- me donner les tetes -> Wendy
-
-
-************
-
-
-23 : 2h
-24 : 4H
-25 : 1h
-28 : 4h
-29 : 1h
-02 : 1h
-04 : 1h30
-
-
-
-**********************
-   npm install
-   ./node_modules/.bin/gulp watch
-   ./node_modules/.bin/gulp deploy
