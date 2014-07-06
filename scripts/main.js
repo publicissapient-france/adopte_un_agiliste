@@ -83,7 +83,11 @@ $(function () {
         scrollerModel.scrollRight()
     });
 
-    $('.adopt-me').click(function() {
-        //$('#adopt-me-modal').modal({})
-    })
+
+    $('.scroll-down').click(function () {
+        var scrollDownPos = $(this).offset().top;
+        $('html, body').animate({
+            scrollTop: scrollDownPos
+        })
+    });
 });

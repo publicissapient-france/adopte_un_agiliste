@@ -87,11 +87,11 @@ h2 {
     width: 100%;
   }
 }
-
+@headerHeight:105px;
 header {
   background-color: @xebiaColor;
   padding-top: 15px;
-  height: 105px;
+  height: @headerHeight;
 
   .header-content {
     padding: 10px 0;
@@ -152,6 +152,7 @@ main {
 
   .selected-agiliste {
 
+    min-height: ~"calc(100vh - @{headerHeight} - 105px)";
     background-color: white;
     .box-shadow(8px 0px 15px #aaa);
     margin-bottom: 20px;
@@ -275,6 +276,7 @@ main {
       }
 
       border-radius: 5px;
+      text-decoration: none;
     }
 
     .bottom {
@@ -292,6 +294,20 @@ main {
   }
 
   .coach-du-mois {
+
+    .scroll-down {
+      background-color: @xebiaColor;
+      color:white;
+      border:none;
+      border-radius:100%;
+      opacity:0.7;
+      @heightScrollBtn:25px;
+      height:@heightScrollBtn;
+      width:@heightScrollBtn;
+      vertical-align: top;
+      cursor: pointer;
+      margin-left:10px;
+    }
 
     .content {
       max-width: @maxWidthInner;
@@ -389,7 +405,7 @@ main {
           border-radius: 100%;
           color: white;
 
-          span {
+          .link-to-adopt {
             font-size: 24px;
             font-family: 'Handlee', cursive;
             vertical-align: middle;
@@ -517,7 +533,7 @@ footer {
     .tagline-alliance {
       width: 450px;
       margin: auto;
-      margin-bottom:15px;
+      margin-bottom: 15px;
       @media (max-width: 470px) {
         width: 100%;
       }

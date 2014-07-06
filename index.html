@@ -5,8 +5,9 @@
     <meta name="author" content="Xebia IT Architects"/>
     <meta name="reply-to" content="marketing@xebia.com"/>
     <meta name="owner" content="Xebia IT Architects"/>
-    <meta name="description" content="Xebia lance sa collection Agile. Adoptez un agiliste et soyez à la pointe de la méthodologie."/>
-    <meta name="keywords" content="Agilité, Méthodes agiles, Scrum, Kanban " />
+    <meta name="description"
+          content="Xebia lance sa collection Agile. Adoptez un agiliste et soyez à la pointe de la méthodologie."/>
+    <meta name="keywords" content="Agilité, Méthodes agiles, Scrum, Kanban "/>
     <meta name="content-language" content="fr"/>
     <meta name="robots" content="follow,index,all"/>
 
@@ -29,8 +30,6 @@
 
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.1.0/bootstrap-modal.pack.js"></script>
-
 
     <!-- build:hbar js/templates.js -->
     <script src="templates/agiliste-miniature.handlebars"></script>
@@ -72,7 +71,7 @@
 
         <div class="centering buttons">
             <button class="left-scroll"></button>
-            <button class="adopt-me">J'adopte&nbsp;!</button>
+            <a href="mailto:info@xebia.fr?subject=Adopter un agiliste" class="adopt-me">J'adopte&nbsp;!</a>
             <button class="right-scroll"></button>
         </div>
 
@@ -91,7 +90,7 @@
     </section>
 
     <section class="coach-du-mois centering">
-        <h1>Nos coachs du mois</h1>
+        <h1>Nos coachs du mois <button class="scroll-down">V</button></h1>
 
         <div class="content">
             <div class="coach-list" id="coach-list">
@@ -160,44 +159,22 @@
 </footer>
 
 <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
     ga('create', 'UA-1657252-20', 'auto');
     ga('send', 'pageview');
 
 </script>
 
-<div class="modal fade" id="adopt-me-modal" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-
-            </div>
-            <div class="modal-body">
-                <p>Vous voulez <strong>adopter</strong> un de nors coachs ou tout simplement en <strong>savoir plus&nbsp:?</strong></p>
-
-                <p class="empahsized">Rien de plus facile Adoptez-nous&nbsp;!</p>
-
-                <p>Nous vous contacterons</p>
-
-                <h2>Contact</h2>
-                <span>*Champs obligatoires</span>
-
-
-
-
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
 </body>
 </html>
