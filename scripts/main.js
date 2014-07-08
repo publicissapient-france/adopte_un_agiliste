@@ -83,6 +83,26 @@ $(function () {
         scrollerModel.scrollRight()
     });
 
+    $('.adopt-me').click(function () {
+        $('#adopt-me-modal').modal({})
+    });
+
+    $('#contact-form').submit(function (event) {
+        event.preventDefault();
+
+        var fields = ['firstname', 'lastname', 'company', 'phone', 'email'];
+        var lineFeed = '%0D%0A';
+        var body = fields.map(function (field) {
+            var value = $('#' + field).val();
+            var label = $('label[for=' + field + ']').text().replace('*', '');
+            return label + ' : ' + value + lineFeed;
+        }).join('');
+        window.location = 'mailto:info@xebia.fr?subject=Adopter un agiliste&body=' + body + lineFeed
+
+        $('#adopt-me-modal').modal('hide');
+        $('#thanks-modal').modal('show');
+    });
+
 
     $('.scroll-down').click(function () {
         var scrollDownPos = $(this).offset().top;
