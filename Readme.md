@@ -26,6 +26,3 @@ Déployer le site en prod
   *  Lancer la commande <code>./node_modules/.bin/gulp deploy</code>
 
 
-
-Refaire les triangles pour scroller ( -> avec un triangle border)
-Teste coller en haut si un des textes très grand
