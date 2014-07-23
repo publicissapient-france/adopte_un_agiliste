@@ -19,9 +19,9 @@ window.AGILISTE_MAIN = [
     },
     {
         title: 'On livre le 12 ... mais de quel mois??',
-        text: "Ca fait 1 an et demi qu'on livre à la fin du mois? Pas de problème, c'est totalement IN le ?????, vous êtes encore dans le coup. Sinon vous pouvez adopter ce petit bijou. Posez le au milieu de vos équipes et il mettra votre Time To Market au régime.",
-        name: 'Gilles Mantel',
-        image_url: 'gilles_mantel.jpg'
+        text: "Ca fait 1 an et demi qu'on livre à la fin du mois? Pas de problème, les autres non plus ne livrent jamais à l'heure, si ? Sinon vous pouvez adopter ce petit bijou. Posez le au milieu de vos équipes et il mettra votre Time To Market au régime.",
+        name: 'Benjamin Moitié',
+        image_url: 'benjamin_moitie.jpg'
     },
     {
         title: 'Je suis un génie incompris ... de ses utilisateurs',
@@ -31,7 +31,7 @@ window.AGILISTE_MAIN = [
     },
     {
         title: "J'ai plus de bugs que de stories",
-        text: "Dératisation, contrôle des termittes, vérification de l'humidité, bilan thermique, … Heureusement que les normes dans le logiciel sont moins drastiques que dans le bâtiment, car vous auriez peu de chance de revendre votre logiciel. Sinon optez pour un bilan complet avec notre expert.",
+        text: "Dératisation, contrôle des termites, vérification de l'humidité, bilan thermique, … Heureusement que les normes dans le logiciel sont moins drastiques que dans le bâtiment, car vous auriez peu de chance de revendre votre logiciel. Sinon optez pour un bilan complet avec notre expert.",
         name: 'Clément Rochas',
         image_url: 'clement_rochas.jpg'
     }
@@ -39,54 +39,49 @@ window.AGILISTE_MAIN = [
 
 window.AGILISTE_MINIATURE = [
     {
-        image_url: 'benjamin_moitie_mini.png',
+        image_url: 'benjamin_moitie_mini.jpg',
         name: 'Benjamin Moitié',
-        title: 'Backlog Spécialiste',
+        title: 'Spécialiste en backlog',
         description: 'Le barbu'
     },
     {
-        image_url: 'laurene_vol_mini.png',
+        image_url: 'laurene_vol_mini.jpg',
         name: 'Laurène Vol',
-        title: 'Kanban Experte',
+        title: 'Experte Kanban',
         description: 'La pro du post-it'
     },
     {
-        image_url: 'clement_rochas_mini.png',
+        image_url: 'clement_rochas_mini.jpg',
         name: 'Clément Rochas',
-        title: 'Le DevOps',
-        description: "Les valeurs d'abord !"
+        title: 'Option Devops',
+        description: "Fusion man"
     },
 
     {
-        image_url: 'benjamin_moitie_mini.png',
-        name: 'Benjamin Moitié',
-        title: 'Backlog Spécialiste',
-        description: 'Le barbu'
+        image_url: 'ludovic_perot_mini.jpg',
+        name: 'Ludovic Perot',
+        title: 'Diffuseur de bonne parole',
+        description: 'Le nouvel évangeliste'
+
     },
     {
-        image_url: 'laurene_vol_mini.png',
-        name: 'Laurène Vol',
-        title: 'Kanban Experte',
-        description: 'La pro du post-it'
+        image_url: 'emmanuel_sciara_mini.jpg',
+        name: 'Emmanuel Sciara',
+        title: 'Briseur de préjugés',
+        description: "Le Chamboul'tout"
     },
     {
-        image_url: 'clement_rochas_mini.png',
-        name: 'Clément Rochas',
-        title: 'Le DevOps',
-        description: "Les valeurs d'abord !"
+        image_url: 'renaud_chevalier_mini.jpg',
+        name: 'Renaud Chevalier',
+        title: "Scaleur d'Agilité",
+        description: "Le professeur"
     },
 
     {
-        image_url: 'benjamin_moitie_mini.png',
-        name: 'Benjamin Moitié',
-        title: 'Backlog Spécialiste',
-        description: 'Le barbu'
-    },
-    {
-        image_url: 'laurene_vol_mini.png',
-        name: 'Laurène Vol',
-        title: 'Kanban Experte',
-        description: 'La pro du post-it'
+        image_url: 'gwenael_bonhommeau_mini.jpg',
+        name: 'Gwenael Bonhommeau',
+        title: 'Expertise Lego',
+        description: 'Le constructeur'
     }
 
 ];

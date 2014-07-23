@@ -359,6 +359,7 @@ main {
     }
 
     @agilisteHeight: 200px;
+    @agilisteWidth: 230px;
     .agiliste {
       text-align: center;
       display: inline-block;
@@ -370,6 +371,10 @@ main {
         display: inline-block;
         position: relative;
         height: @agilisteHeight;
+        img {
+          height: @agilisteHeight;
+          width: @agilisteWidth;
+        }
         .mask {
           display: none;
           position: absolute;
