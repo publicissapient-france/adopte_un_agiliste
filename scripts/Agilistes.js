@@ -39,10 +39,10 @@ window.AGILISTE_MAIN = [
 
 window.AGILISTE_MINIATURE = [
     {
-        image_url: 'benjamin_moitie_mini.jpg',
-        name: 'Benjamin Moitié',
-        title: 'Spécialiste en backlog',
-        description: 'Le barbu'
+        image_url: 'ludovic_perot_mini.jpg',
+        name: 'Ludovic Perot',
+        title: 'Diffuseur de bonne parole',
+        description: 'Le nouvel évangeliste'
     },
     {
         image_url: 'laurene_vol_mini.jpg',
@@ -58,11 +58,10 @@ window.AGILISTE_MINIATURE = [
     },
 
     {
-        image_url: 'ludovic_perot_mini.jpg',
-        name: 'Ludovic Perot',
-        title: 'Diffuseur de bonne parole',
-        description: 'Le nouvel évangeliste'
-
+        image_url: 'benjamin_moitie_mini.jpg',
+        name: 'Benjamin Moitié',
+        title: 'Spécialiste en backlog',
+        description: 'Le showman'
     },
     {
         image_url: 'emmanuel_sciara_mini.jpg',
