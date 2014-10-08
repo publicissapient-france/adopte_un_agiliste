@@ -172,30 +172,62 @@ main {
           margin: 0 20px;
         }
       }
-
-      .agiliste-text-wrapper, .agiliste-photo-wrapper {
+      .agiliste-text-wrapper {
+        vertical-align: top;
         position: relative;
         display: inline-block;
-        width: @maxWidthInner;
-        margin: 0 (@firstBreakPoint - @maxWidthInner) /2;
+        width: 270px;
+        margin: 0;
+        margin-left: -90px;
+
         p {
           line-height: 24px;
           font-size: 14px;
           font-weight: 300;
 
         }
+
         @media (max-width: @firstBreakPoint) {
           margin: 0;
 
-          width: 100vw;
+          width: 100%;
           vertical-align: top;
+          margin-top: 60px;
+
+
           > p {
             margin-right: 45px;
           }
         }
 
+        @media (max-width: 470px) {
+          margin-top: 40px;
+          h2 {
+            margin-bottom: 50px;
+          }
+        }
+        @media (max-width: 400px) {
+          margin-top: 60px;
+        }
+        @media (max-width: 340px) {
+          margin-top: 90px;
+        }
       }
+      .agiliste-photo-wrapper {
+        vertical-align: top;
+        position: relative;
+        display: inline-block;
+        width: @maxWidthInner;
+        margin: 0 (@firstBreakPoint - @maxWidthInner) /2;
 
+        @media (max-width: @firstBreakPoint) {
+          margin: 0;
+
+          width: 100vw;
+          vertical-align: top;
+
+        }
+      }
     }
 
     .buttons {
@@ -206,7 +238,7 @@ main {
     .left-scroll, .right-scroll {
       z-index: 3;
       position: absolute;
-      top: @heightPhoto - @heightButtonScroll/2;
+      top: @heightPhoto - @heightButtonScroll/2 + 30px;
       border: none;
       background: @xebiaColor;
       color: white;
@@ -240,7 +272,14 @@ main {
     }
 
     .top {
-      height: @heightPhoto;
+      height: 385px;
+
+      @media (max-width: @firstBreakPoint) {
+        height: 520px;
+      }
+      @media (max-width: 470px) {
+        height: 550px;
+      }
       background-color: black;
       .scroll-wrapper {
         max-width: @firstBreakPoint;
@@ -256,6 +295,7 @@ main {
         margin-right: auto;
 
         img {
+          vertical-align: top;
           height: @heightPhoto;
           @media (max-width: 470px ) {
             height: auto;
@@ -276,8 +316,15 @@ main {
       font-size: 24px;
       cursor: pointer;
       position: absolute;
-      top: @heightPhoto - 70px;
-      right: 100px;
+
+      top: @heightPhoto + 30px;
+      left: 170px;
+
+      @media (max-width: @firstBreakPoint) {
+        right: 100px;
+        left: auto;
+        top: @heightPhoto - 70px;
+      }
 
       @media (max-width: 470px) {
         right: 0;
@@ -293,19 +340,6 @@ main {
       text-decoration: none;
     }
 
-    .bottom {
-      background-color: black;
-      color: white;
-      height: 100%;
-
-      @media (max-width: @firstBreakPoint) {
-        padding-top: 40px;
-      }
-
-      p {
-        text-align: justify;
-      }
-    }
   }
 
   .coach-du-mois {

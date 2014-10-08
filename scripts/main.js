@@ -24,14 +24,8 @@ $(function () {
 
     ///partie principale
     var agilisteMainTexts = AGILISTE_MAIN;
-    var agilisteMainTextTpl = TEMPLATES['agiliste-main-text'];
-    var htmlMainText = agilisteMainTexts.map(function (agiliste) {
-        return agilisteMainTextTpl(agiliste);
-    }).join('');
 
-    var $agilisteMainTextScroller = $('#agiliste-main-text-wrapper');
-    $agilisteMainTextScroller.append(htmlMainText);
-    var widthOfOneElement = $('.agiliste-text-wrapper').outerWidth(true);
+    var widthOfOneElement = $('.agiliste-photo-wrapper').outerWidth(true);
 
     var agilistePhotoTpl = TEMPLATES['agiliste-photo-wrapper'];
     var htmlPhoto = agilisteMainTexts.map(function (agiliste) {
@@ -61,13 +55,12 @@ $(function () {
         },
         displayNewPosition: function () {
             var newLeftPosition = -this.currentPosition * widthOfOneElement;
-            $agilisteMainTextScroller.css('left', newLeftPosition);
             $('#scroller-photo-agiliste').css('left', newLeftPosition);
         }
     };
 
     var leftPositioningAgiliste = function () {
-        var $agilisteTextWrapper = $('.agiliste-text-wrapper');
+        var $agilisteTextWrapper = $('.agiliste-photo-wrapper');
         widthOfOneElement = $agilisteTextWrapper.outerWidth(true);
 
         scrollerModel.displayNewPosition();
