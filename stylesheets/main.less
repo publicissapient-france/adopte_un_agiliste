@@ -76,7 +76,7 @@ h2 {
 @backgroundMediumColor: #FCFDFF;
 
 @firstBreakPoint: 1024px;
-@maxWidthInner: @firstBreakPoint - 2 * 100px;
+@maxWidthInner: @firstBreakPoint - 2 * 50px;
 
 .centering {
   max-width: @firstBreakPoint;
@@ -176,41 +176,55 @@ main {
         vertical-align: top;
         position: relative;
         display: inline-block;
-        width: 320px;
+
         margin: 0;
+        margin-top: 30px;
+        @widthBlock: 441px;
+        width: @widthBlock;
+        text-align: center;
+
+
+
+        .inner-text-wrapper {
+          background-color: #262626;
+          min-height: 294px;
+
+        }
+
+        .adopt-me {
+          position: static;
+          width: @widthBlock;
+          margin-top: 10px;
+          @media (max-width: 840px) {
+            width:320px;
+          }
+          @media (max-width: 769px) {
+            width:100%;
+          }
+        }
+        h2 {
+          margin: 10px 20px;
+          border-bottom: 1px solid white;
+          font-size: 30px;
+        }
 
         p {
           line-height: 24px;
           font-size: 14px;
           font-weight: 300;
-
+          text-align: left;
+          padding: 10px 20px;
         }
 
-        @media (max-width: @firstBreakPoint) {
-          margin: 0;
-
-          width: 100%;
-          vertical-align: top;
-          margin-top: 60px;
-
-
-          > p {
-            margin-right: 45px;
-          }
+        @media (max-width: 840px) {
+          width:320px;
+        }
+        @media (max-width: 769px) {
+          width:100%;
+          position: relative;
+          right: 20px;
         }
 
-        @media (max-width: 470px) {
-          margin-top: 40px;
-          h2 {
-            margin-bottom: 50px;
-          }
-        }
-        @media (max-width: 400px) {
-          margin-top: 60px;
-        }
-        @media (max-width: 340px) {
-          margin-top: 90px;
-        }
       }
       .agiliste-photo-wrapper {
         vertical-align: top;
@@ -256,14 +270,14 @@ main {
     }
 
     .left-scroll {
-      left: 20px;
+      left: 10px;
       &:before {
         content: '‹';
         padding-right: 5px;
       }
     }
     .right-scroll {
-      right: 20px;
+      right: 10px;
       &:before {
         content: '›';
         padding-left: 5px;
@@ -271,8 +285,7 @@ main {
     }
 
     .top {
-      min-height:~"calc(100vh - @{headerHeight})";
-
+      min-height: ~"calc(100vh - @{headerHeight})";
 
       background-color: black;
       .scroll-wrapper {
@@ -288,11 +301,35 @@ main {
         margin-left: auto;
         margin-right: auto;
 
+        @media (max-width: 769px) {
+          text-align: center;
+
+          img.agiliste-tampon {
+            display: none;
+          }
+        }
+
         img {
           vertical-align: top;
           height: 100%;
-          max-width:460px;
-          
+          max-width: 460px;
+
+          @media (max-width: @firstBreakPoint) {
+            height: auto;
+            max-width: 380px;
+
+            &.agiliste-big {
+              &.benjamin_moitie, &.laurene_vol {
+                //TOUTES LES IMAGES NE SONT PAS A LA MEME HAUTEUR, CREVINDIEU !
+                margin-top: 60px;
+              }
+            }
+          }
+
+          @media (max-width: 890px) {
+            max-width: 320px;
+          }
+
           @media (max-width: 470px ) {
             height: auto;
             width: 100%;

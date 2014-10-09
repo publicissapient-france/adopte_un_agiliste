@@ -1,16 +1,19 @@
 <div class="centering agiliste-photo-wrapper">
     <div class="agiliste-photo">
         <img src="{{image_url}}" alt="{{name}}"
-             class="agiliste-big"/>
+             class="agiliste-big {{nameFormatted}}"/>
 
 
         <div class="agiliste-text-wrapper">
-            <img src="{{tampon_url}}" alt="{{name}}"
-                 class="agiliste-tampon"/>
+            <img src="{{tampon_url}}" alt="tampon {{name}}"
+                 class="agiliste-tampon {{nameFormatted}}"/>
 
-            <h2>{{title}}</h2>
+            <div class="inner-text-wrapper">
+                <h2>{{title}}</h2>
 
-            <p>{{text}}</p>
+                <p>{{text}}</p>
+            </div>
+            <button class="adopt-me">J'adopte&nbsp;!</button>
         </div>
     </div>
 </div>

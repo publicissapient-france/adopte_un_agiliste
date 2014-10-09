@@ -31,7 +31,8 @@ $(function () {
     var htmlPhoto = agilisteMainTexts.map(function (agiliste) {
         var originalImageUrl = agiliste.image_url
         agiliste.image_url = 'images/agilistes/' + originalImageUrl;
-        agiliste.tampon_url= 'images/agilistes/tampon-' + originalImageUrl.replace('jpg','png');
+        agiliste.tampon_url = 'images/agilistes/tampon-' + originalImageUrl.replace('jpg', 'png');
+        agiliste.nameFormatted = agiliste.name.toLowerCase().replace(/[éè]/g, 'e').replace(/\s+/g, '_');
         return agilistePhotoTpl(agiliste);
     }).join('');
 
