@@ -29,7 +29,9 @@ $(function () {
 
     var agilistePhotoTpl = TEMPLATES['agiliste-photo-wrapper'];
     var htmlPhoto = agilisteMainTexts.map(function (agiliste) {
-        agiliste.image_url = 'images/agiliste/' + agiliste.image_url;
+        var originalImageUrl = agiliste.image_url
+        agiliste.image_url = 'images/agilistes/' + originalImageUrl;
+        agiliste.tampon_url= 'images/agilistes/tampon-' + originalImageUrl.replace('jpg','png');
         return agilistePhotoTpl(agiliste);
     }).join('');
 

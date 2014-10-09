@@ -176,9 +176,8 @@ main {
         vertical-align: top;
         position: relative;
         display: inline-block;
-        width: 270px;
+        width: 320px;
         margin: 0;
-        margin-left: -90px;
 
         p {
           line-height: 24px;
@@ -275,12 +274,6 @@ main {
       min-height:~"calc(100vh - @{headerHeight})";
 
 
-      @media (max-width: @firstBreakPoint) {
-        height: 520px;
-      }
-      @media (max-width: 470px) {
-        height: 550px;
-      }
       background-color: black;
       .scroll-wrapper {
         max-width: @firstBreakPoint;
@@ -297,7 +290,9 @@ main {
 
         img {
           vertical-align: top;
-          height: @heightPhoto;
+          height: 100%;
+          max-width:460px;
+          
           @media (max-width: 470px ) {
             height: auto;
             width: 100%;
