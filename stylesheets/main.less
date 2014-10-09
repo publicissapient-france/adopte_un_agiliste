@@ -272,7 +272,8 @@ main {
     }
 
     .top {
-      height: 385px;
+      min-height:~"calc(100vh - @{headerHeight})";
+
 
       @media (max-width: @firstBreakPoint) {
         height: 520px;
