@@ -9,7 +9,6 @@ $(function () {
         $button.data('hiddentext', currentText);
     });
 
-
     //partie miniatures
     var agilisteMiniatureTemplate = TEMPLATES['agiliste-miniature'];
 
@@ -77,6 +76,12 @@ $(function () {
     });
     $('.right-scroll').click(function () {
         scrollerModel.scrollRight()
+    });
+
+    $('.bottom-scroll').click(function() {
+        $('html, body').animate({
+            scrollTop: $(".coach-du-mois").offset().top
+        }, 1000);
     });
 
     $('.adopt-me').click(function () {
