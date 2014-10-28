@@ -6,8 +6,8 @@ window.AGILISTE_MAIN = [
         image_url: 'emmanuel_sciara.png'
     },
     {
-        title: 'Je livre toujours ... En retard',
-        text: "Vous livrez toujours en retard? Le manque de prédictibilité n'est pas une fatalité. Ce coach est équipé de tous les outils nécessaires pour vous aider : tee-shirts de tailles variées, mètre étalon de Fibonacci, capteurs de flux, générateur de statistiques. Avec lui dans votre caddie, vous livrerez à l'heure!",
+        title: 'Je livre toujours... En retard',
+        text: "Vous livrez toujours en retard ? Le manque de prédictibilité n'est pas une fatalité. Ce coach est équipé de tous les outils nécessaires pour vous aider : tee-shirts de tailles variées, mètre étalon de Fibonacci, capteurs de flux, générateur de statistiques. Avec lui dans votre caddie, vous livrerez à l'heure !",
         name: 'Gwenael Bonhommeau',
         image_url: 'gwenael_bonhommeau.png'
     },
@@ -18,13 +18,13 @@ window.AGILISTE_MAIN = [
         image_url: 'renaud_chevalier.png'
     },
     {
-        title: 'On livre le 12 ... mais de quel mois??',
-        text: "Ca fait 1 an et demi qu'on livre à la fin du mois? Pas de problème, les autres non plus ne livrent jamais à l'heure, si ? Sinon vous pouvez adopter ce petit bijou. Posez le au milieu de vos équipes et il mettra votre Time To Market au régime.",
+        title: 'On livre le 12... mais de quel mois ??',
+        text: "Ca fait 1 an et demi qu'on livre à la fin du mois ? Pas de problème, les autres non plus ne livrent jamais à l'heure, si ? Sinon vous pouvez adopter ce petit bijou. Posez le au milieu de vos équipes et il mettra votre Time To Market au régime.",
         name: 'Benjamin Moitié',
         image_url: 'benjamin_moitie.png'
     },
     {
-        title: 'Je suis un génie incompris ... de ses utilisateurs',
+        title: 'Je suis un génie incompris... de ses utilisateurs',
         text: "Le PO est-il brillant ou complètement à la rue ? C'est le genre de discussions qui animent vos équipes à la machine à café. Et franchement vous êtes bien incapable de trancher le débat tellement il est difficile de comprendre ses arguments. Il est temps d'adopter la fille spirituelle de Steve Jobs pour sauver votre produit de l'échec qui l'attend.",
         name: 'Laurène Vol',
         image_url: 'laurene_vol.png'
