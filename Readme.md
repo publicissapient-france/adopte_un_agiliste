@@ -13,7 +13,7 @@ Travailler sur le site
   *  Ouvrir un terminal
   *  Aller dans le répertoire contenant le repository
   *  Lancer la commande <code>npm install</code>
-  *  Lancer la commande <code>./node_modules/.bin/gulp watch</code>
+  *  Lancer la commande <code>npm run watch</code>
   *  Faire les modifications voulues
   *  Tester le site en  ouvrant le fichier index.html du répertoire dist dans un navigateur
 
@@ -23,6 +23,6 @@ Déployer le site en prod
   *  Ouvrir un terminal
   *  Aller dans le répertoire contenant le repository
   *  Lancer la commande <code>npm install</code>
-  *  Lancer la commande <code>./node_modules/.bin/gulp deploy</code>
+  *  Lancer la commande <code>npm run deploy</code>
 
 
